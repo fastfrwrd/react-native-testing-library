@@ -36,6 +36,13 @@ export type InternalConfig = Config & {
 const defaultConfig: InternalConfig = {
   asyncUtilTimeout: 1000,
   defaultIncludeHiddenElements: false,
+  hostComponentNames: {
+    text: 'Text',
+    textInput: 'TextInput',
+    switch: 'RCTSwitch',
+    scrollView: 'RCTScrollView',
+    modal: 'RCTModal',
+  },
 };
 
 let config = { ...defaultConfig };

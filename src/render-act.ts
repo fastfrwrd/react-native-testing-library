@@ -11,7 +11,7 @@ export function renderWithAct(
   // This will be called synchronously.
   void act(() => {
     // @ts-expect-error TestRenderer.create is not typed correctly
-    renderer = TestRenderer.create(component, options);
+    renderer = TestRenderer.create(component, { unstable_isConcurrent: true, ...options });
   });
 
   // @ts-ignore act is synchronous, so renderer is already initialized here

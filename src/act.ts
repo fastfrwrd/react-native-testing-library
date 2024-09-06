@@ -1,6 +1,9 @@
+import * as React from 'react';
 // This file and the act() implementation is sourced from react-testing-library
 // https://github.com/testing-library/react-testing-library/blob/c80809a956b0b9f3289c4a6fa8b5e8cc72d6ef6d/src/act-compat.js
 import { act as reactTestRendererAct } from 'react-test-renderer';
+
+const reactAct = typeof React.act === 'function' ? React.act : reactTestRendererAct;
 
 type ReactAct = typeof reactTestRendererAct;
 
@@ -71,7 +74,7 @@ function withGlobalActEnvironment(actImplementation: ReactAct) {
   };
 }
 
-const act = withGlobalActEnvironment(reactTestRendererAct) as ReactAct;
+const act = withGlobalActEnvironment(reactAct as ReactAct) as ReactAct;
 
 export default act;
 export { setIsReactActEnvironment as setReactActEnvironment, getIsReactActEnvironment };
