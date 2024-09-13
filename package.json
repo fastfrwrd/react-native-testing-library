@@ -45,6 +45,11 @@
     "dont-cleanup-after-each.js",
     "typings/index.flow.js"
   ],
+  "exports": {
+    ".": "./build/index.js",
+    "./extend-expect": "./extend-expect.js"
+    "./dont-cleanup-after-each": "./dont-cleanup-after-each.js"
+  },
   "dependencies": {
     "jest-matcher-utils": "^29.7.0",
     "pretty-format": "^29.7.0",
